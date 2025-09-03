@@ -4,7 +4,10 @@
  */
 package tools;
 
+import java.util.Date;
+import javax.swing.JComboBox;
 import javax.swing.JComponent;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 /**
@@ -12,19 +15,59 @@ import javax.swing.JTextField;
  * @author u1845853
  */
 public class Util {
-    public static void habilitar(boolean valor, JComponent ... componentes) {
+
+    public static void habilitar(boolean valor, JComponent... componentes) {
         for (int i = 0; i < componentes.length; i++) {
             componentes[i].setEnabled(valor);
-            
+
         }
     }
-    
-    public static void limpar(JComponent...componentes){
+
+    public static void limpar(JComponent... componentes) {
         for (int i = 0; i < componentes.length; i++) {
-            ((JTextField)componentes[i]).setText("");
-         
-            
+            if (componentes[i] instanceof JTextField) {
+                ((JTextField) componentes[i]).setText("");
+            }
+            if (componentes[i] instanceof JComboBox) {
+                ((JComboBox) componentes[i]).setSelectedIndex(-1);
+            }
         }
-    
+
+    }
+
+    public static void mensagem(String cad) {
+        JOptionPane.showMessageDialog(null, cad);
+    }
+
+    public static boolean pergunta(String cad) {
+        JOptionPane.showConfirmDialog(null, cad);
+        return true;
+    }
+
+    public static int strInt(String num) {
+        return Integer.parseInt(num);
+
+    }
+
+    public static String intString(int num) {
+        return String.valueOf(num);
+    }
+
+    public static double strToDouble(String num) {
+     return 0.0;
+    }
+
+    public static String doubleToStr(double num) {
+        return"";
+
+    }
+
+    public static Date strDate(String data) {
+        return null;
+
+    }
+
+    public static String dateToStr(Date data) {
+      return "";
     }
 }

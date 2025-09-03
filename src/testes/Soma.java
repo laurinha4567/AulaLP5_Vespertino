@@ -26,7 +26,7 @@ public class Soma {
 
     public static void main(String[] args) {
         Soma soma = new Soma();
-        int resp = soma.somar(5, 8, 8,  32,23,6,78, 12,  21, 57,6);
+        int resp = soma.somar(5, 8, 8, 32, 23, 6, 78, 12, 21, 57, 6);
         System.out.println("soma :" + resp);
     }
 }
